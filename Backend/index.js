@@ -37,7 +37,7 @@ app.post("/signup", async (req, resp) => {
 
 app.post("/login", async (req, res) => {
   if (req.body.email && req.body.password) {
-    let user = await User.findOne(req.body); 
+    let user = await User.findOne(req.body).select("-password"); 
     if (user) {
       res.send(user);
     } else {
@@ -58,6 +58,7 @@ app.post("/uploadbook", upload.single("pdfBook"), async (req, res) => {
   let category = req.body.category; 
   let imgURL = req.body.imgURL;
   let filename = req.file.filename
+  console.log(req.body);
 
   try {
     await Book.create({title:title,desc:desc,stock:stock,price:price,category:category,imgURL:imgURL,pdfBook:filename})

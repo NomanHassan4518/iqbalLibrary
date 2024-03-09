@@ -23,10 +23,10 @@ const AddBook = () => {
     formData.append("imgURL", imgURL)
     formData.append("pdfBook", pdfBook)
 
-    const handleSumbit = async (e)=>{
+    const handleSumbit =  (e)=>{
         e.preventDefault();
 
-        let result =await axios.post("https://iqbal-library.vercel.app/uploadbook" , formData , {
+        let result = axios.post("https://iqbal-library.vercel.app/uploadbook" , formData , {
             headers:{
                 "Content-Type":"multipart/form-data"
               }
@@ -34,7 +34,7 @@ const AddBook = () => {
 
         console.log("res" , result);
 
-        console.log(formData);
+        console.log(formData.append.title);
     }
 
     return (
