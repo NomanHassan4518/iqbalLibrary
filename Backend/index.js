@@ -58,7 +58,6 @@ app.post("/uploadbook", upload.single("pdfBook"), async (req, res) => {
   let category = req.body.category; 
   let imgURL = req.body.imgURL;
   let filename = req.file.filename
-  console.log(req.body);
 
   try {
     await Book.create({title:title,desc:desc,stock:stock,price:price,category:category,imgURL:imgURL,pdfBook:filename})

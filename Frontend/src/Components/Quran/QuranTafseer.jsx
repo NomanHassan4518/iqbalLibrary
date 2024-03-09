@@ -23,12 +23,12 @@ const QuranTafseer = (props) => {
     const tafseerItems = result.filter(item => item.category === "Quran Tafseer");
     console.log(tafseerItems,"good");
   return (
-    <div className='pt-32 flex items-center space-x-4'>
-      <div className={` ${isSticky ? "sticky top-0" : "relative top-[-455px]"}`}>
-        <Sidebar />
-      </div>
+    <div className='pt-20  flex  space-x-3'>
+    <div>
+    <Sidebar/>
+    </div>
 
-      <div className=' rounded p-5 !mr-5 border-2 border-black'>
+      <div className=' rounded p-7 !mr-5 border-2 border-green-500 shadow-lg w-full  mt-12'>
         <div className="flex items-center justify-between">
           <h1 className='text-3xl font-bold font-serif'>Quran Tafseer Books</h1>
           <p className='text-lg text-gray-400'>{tafseerItems.length} Books</p>
@@ -37,7 +37,7 @@ const QuranTafseer = (props) => {
         <div className="grid grid-cols-2 mt-10 gap-5">
           {
             tafseerItems.map((item, index) => (
-              <div key={index} className='border-2 shadow-lg cursor-pointer rounded grid  p-3 grid-cols-12'>
+              <div key={index} className='bg-gray-50 shadow border cursor-pointer rounded grid  p-3 grid-cols-12 hover:-translate-y-2 duration-500'>
                 <div className='col-span-4 h-[216px]'>
                   <img className='w-full h-full object-contain !p-0' src={item.imgURL} alt="" />
                 </div>

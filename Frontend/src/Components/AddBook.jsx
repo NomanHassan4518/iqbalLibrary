@@ -26,7 +26,7 @@ const AddBook = () => {
     const handleSumbit =  (e)=>{
         e.preventDefault();
 
-        let result = axios.post("https://iqbal-library.vercel.app/uploadbook" , formData , {
+        let result = axios.post("http://localhost:5000/uploadbook" , formData , {
             headers:{
                 "Content-Type":"multipart/form-data"
               }
