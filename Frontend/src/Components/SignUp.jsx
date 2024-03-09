@@ -45,7 +45,7 @@ const SignUp = () => {
 
   const handleSignup = async (e) => {
     e.preventDefault()
-    let result = await axios.post("http://localhost:5000/signup", postData, {
+    let result = await axios.post("https://iqbal-library.vercel.app/signup", postData, {
       headers: {
         "Content-Type": "application/json"
       }

@@ -11,7 +11,7 @@ const TopBooks = () => {
 
 
     try {
-      let response = await fetch("http://localhost:5000/topbooks");
+      let response = await fetch("https://iqbal-library.vercel.app/topbooks");
       let jsonData = await response.json();
       setData(jsonData.data)
     }
@@ -53,7 +53,7 @@ const TopBooks = () => {
 
                       {
                         auth ?
-                          <button > <Link className='w-[14rem] block border px-4 py-2 text-white font-semibold  bg-blue-500 hover:bg-purple-700  !mt-4 rounded-md' to={ `http://localhost:5000/files/${item.pdfBook}`} target='_blank' >Read Online</Link>
+                          <button > <Link className='w-[14rem] block border px-4 py-2 text-white font-semibold  bg-blue-500 hover:bg-purple-700  !mt-4 rounded-md' to={ `https://iqbal-library.vercel.app/files/${item.pdfBook}`} target='_blank' >Read Online</Link>
                           </button>
                           :
                           <button > <Link className='w-[14rem] block border px-4 py-2 text-white font-semibold  bg-blue-500 hover:bg-purple-700  !mt-4 rounded-md' to="/login" >Read Online</Link>
